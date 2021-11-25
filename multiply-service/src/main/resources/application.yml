@@ -1,0 +1,8 @@
+product.service.url: http://localhost:8091/product/
+user.service.url: http//localhost:8092/user/
+
+spring:
+  r2dbc:
+    url: r2dbc:mariadb://192.168.1.95:9001/multiply
+    username: root
+    password: 1234
