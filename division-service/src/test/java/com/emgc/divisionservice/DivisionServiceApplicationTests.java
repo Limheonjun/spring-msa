@@ -1,10 +1,10 @@
-package com.emgc.userservice;
+package com.emgc.divisionservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class R2dbcApplicationTests {
+class DivisionServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

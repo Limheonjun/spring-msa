@@ -32,14 +32,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-bootBuildImage {
-    imageName = docker_id + "/${project.name}"
-    publish = true
-    docker {
-        publishRegistry {
-            username = docker_id
-            password = docker_pw
-        }
-    }
-}
