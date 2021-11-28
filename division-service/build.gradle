@@ -21,6 +21,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'io.projectreactor:reactor-tools'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.mariadb:r2dbc-mariadb'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
@@ -31,4 +32,15 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+bootBuildImage {
+    imageName = docker_id + "/${project.name}"
+    publish = true
+    docker {
+        publishRegistry {
+            username = docker_id
+            password = docker_pw
+        }
+    }
 }

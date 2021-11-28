@@ -1,4 +1,4 @@
-package com.emgc.divisionservice;
+package com.emgc.integrationservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import reactor.tools.agent.ReactorDebugAgent;
 
 @SpringBootApplication
-public class DivisionserviceApplication {
+public class IntegrationServiceApplication {
 
 	public static void main(String[] args) {
 		ReactorDebugAgent.init();
-		SpringApplication.run(DivisionserviceApplication.class, args);
+		SpringApplication.run(IntegrationServiceApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.emgc.divisionservice.router;
+package com.emgc.multiplyservice.router;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,20 +10,20 @@ import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor
-public class DivisionRouter {
+public class MultiplyServiceRouter {
 
-	private final DivisionHandler orderHandler;
+	private final MultiplyHandler multiplyHandler;
 
 	@Bean
-	public RouterFunction<ServerResponse> orderRouter() {
+	public RouterFunction<ServerResponse> multiplyRouter() {
 		return RouterFunctions.route()
-			.path("division", this::subOrderRouter)
+			.path("multiply", this::subMultiplyRouter)
 			.build();
 	}
 
-	private RouterFunction<ServerResponse> subOrderRouter() {
+	private RouterFunction<ServerResponse> subMultiplyRouter() {
 		return RouterFunctions.route()
-			.GET("{division-operand}", orderHandler::doDivision)
+			.GET("{multiply-operand}", multiplyHandler::doMultiply)
 			.build();
 	}
 

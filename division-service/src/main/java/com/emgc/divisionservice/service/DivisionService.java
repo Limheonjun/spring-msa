@@ -3,7 +3,7 @@ package com.emgc.divisionservice.service;
 import org.springframework.stereotype.Service;
 
 import com.emgc.divisionservice.dto.DivisionResponseDto;
-import com.emgc.divisionservice.repository.Number2Repository;
+import com.emgc.divisionservice.repository.NumberRepository;
 
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class DivisionService {
 
-	private final Number2Repository repository;
+	private final NumberRepository repository;
 
 	public Mono<DivisionResponseDto> doDivision(int operand) {
 		return repository.findById(1L)

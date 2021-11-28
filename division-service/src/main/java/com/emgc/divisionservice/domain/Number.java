@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import lombok.Data;
 
 @Data
-public class Number2 {
+public class Number {
 
 	@Id
 	private Long numberId;
