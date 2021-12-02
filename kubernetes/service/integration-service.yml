@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-integration
+spec:
+  selector:
+    matchLabels:
+      service: integration
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        type: app
+        service: integration
+    spec:
+      containers:
+        - name: integration-service
+          image: sinnadla08/integration-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8093
+      terminationGracePeriodSeconds: 10
