@@ -23,3 +23,13 @@ spec:
           ports:
             - containerPort: 8091
       terminationGracePeriodSeconds: 10
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: service-division
+spec:
+  selector:
+    service: division
+  ports:
+    - port: 8091

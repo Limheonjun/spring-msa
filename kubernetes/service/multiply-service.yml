@@ -23,3 +23,13 @@ spec:
           ports:
             - containerPort: 8092
       terminationGracePeriodSeconds: 10
+---
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: service-multiply
+spec:
+  selector:
+    service: multiply
+  ports:
+    - port: 8092
