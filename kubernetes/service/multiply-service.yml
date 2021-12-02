@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-multiply
+spec:
+  selector:
+    matchLabels:
+      service: multiply
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        type: app
+        service: multiply
+    spec:
+      containers:
+        - name: multiply-service
+          image: sinnadla08/multiply-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8092
+      terminationGracePeriodSeconds: 10

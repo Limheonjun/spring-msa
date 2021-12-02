@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-division
+spec:
+  selector:
+    matchLabels:
+      service: division
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      labels:
+        type: app
+        service: division
+    spec:
+      containers:
+        - name: division-service
+          image: sinnadla08/division-service:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8091
+      terminationGracePeriodSeconds: 10
